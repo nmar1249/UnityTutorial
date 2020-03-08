@@ -55,6 +55,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\EnemyController.cs" />
      <Compile Include="Assets\Scripts\HealthCollectible.cs" />
      <Compile Include="Assets\Scripts\RubyController.cs" />
      <Compile Include="Assets\Scripts\SpikeDamage.cs" />
