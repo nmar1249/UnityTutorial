@@ -55,7 +55,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\HealthCollectible.cs" />
      <Compile Include="Assets\Scripts\RubyController.cs" />
+     <Compile Include="Assets\Scripts\SpikeDamage.cs" />
  <Reference Include="Unity.Timeline.Editor">
  <HintPath>E:/Programming Things/UnityTutorial/New Unity Project/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
  </Reference>
