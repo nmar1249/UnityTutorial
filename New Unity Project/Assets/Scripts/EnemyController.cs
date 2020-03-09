@@ -7,6 +7,7 @@ public class EnemyController : MonoBehaviour
     public float maxSpeed = 3.0f;
     public float changeTime = 3.0f;
 
+    public bool broken;
     public int maxHealth = 1;
     public int maxRange = 5; //max wandering range of 5 units
 
@@ -27,11 +28,18 @@ public class EnemyController : MonoBehaviour
         rigidbody2D = GetComponent<Rigidbody2D>();
         timer = changeTime;
         animator = GetComponent<Animator>();
+        broken = true;
     }
 
     // Update is called once per frame
     void Update()
     {
+        //if robot is fixed, return
+        if(!broken)
+        {
+            return;
+        }
+
         timer -= Time.deltaTime;
 
         if(timer < 0)
@@ -67,5 +75,11 @@ public class EnemyController : MonoBehaviour
         {
             player.ChangeHealth(-1);
         }
+    }
+
+    public void Fix()
+    {
+        broken = false;
+        rigidbody2D.simulated = false; //cant stop projectiles or hurt PC
     }
 }
