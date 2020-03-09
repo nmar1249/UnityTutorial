@@ -13171,11 +13171,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: ruby
       objectReference: {fileID: 0}
-    - target: {fileID: 7194173104005110074, guid: c8019502d57f5d6459d55eb3a058e87a,
-        type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c8019502d57f5d6459d55eb3a058e87a, type: 3}
 --- !u!1001 &2718147809996099549
