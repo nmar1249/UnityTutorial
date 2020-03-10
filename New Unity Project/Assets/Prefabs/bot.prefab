@@ -147,6 +147,8 @@ MonoBehaviour:
   maxSpeed: 3
   changeTime: 3
   smokeEffect: {fileID: 7419760573033500315}
+  hitEffect: {fileID: 3690154059548534670, guid: 11589e6f08523284f972d7bce7df589c,
+    type: 3}
   broken: 0
   maxHealth: 1
   maxRange: 5
