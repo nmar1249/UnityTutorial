@@ -68,8 +68,10 @@ public class RubyController : MonoBehaviour
         }
     }
 
+    //used by other objects, triggered when collision occurs with object that damages or heals health
     public void ChangeHealth(int amount)
     {
+        //set invincible timer it doesnt drop to zero in .0001 seconds
         if(amount < 0)
         {
             if (isInvincible)
@@ -84,6 +86,7 @@ public class RubyController : MonoBehaviour
         Debug.Log(currentHealth + "/" + maxHealth);
     }
 
+    //launch projectile
     void Launch()
     {
         GameObject projectileObject = Instantiate(projectilePrefab, rigidbody2d.position + Vector2.up * 0.5f, Quaternion.identity);

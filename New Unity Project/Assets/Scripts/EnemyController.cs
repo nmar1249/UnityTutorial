@@ -81,5 +81,8 @@ public class EnemyController : MonoBehaviour
     {
         broken = false;
         rigidbody2D.simulated = false; //cant stop projectiles or hurt PC
+
+        //set fixed animation
+        animator.SetTrigger("Fixed");
     }
 }
