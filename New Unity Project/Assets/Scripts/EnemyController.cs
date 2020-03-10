@@ -7,6 +7,8 @@ public class EnemyController : MonoBehaviour
     public float maxSpeed = 3.0f;
     public float changeTime = 3.0f;
 
+    public ParticleSystem smokeEffect;
+
     public bool broken;
     public int maxHealth = 1;
     public int maxRange = 5; //max wandering range of 5 units
@@ -82,7 +84,11 @@ public class EnemyController : MonoBehaviour
         broken = false;
         rigidbody2D.simulated = false; //cant stop projectiles or hurt PC
 
+        smokeEffect.Stop();
         //set fixed animation
         animator.SetTrigger("Fixed");
+        //stop smoke particles
+        
+
     }
 }
