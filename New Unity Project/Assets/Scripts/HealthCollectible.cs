@@ -4,15 +4,19 @@ using UnityEngine;
 
 public class HealthCollectible : MonoBehaviour
 {
-  //trigger on collision
-  void OnTriggerEnter2D(Collider2D other)
-    {
+    public ParticleSystem PickupEffect;
+    //trigger on collision
+    void OnTriggerEnter2D(Collider2D other)
+    { 
         RubyController controller = other.GetComponent<RubyController>();
-
-        if(controller != null)
+        ParticleSystem effect = Instantiate(PickupEffect, other.attachedRigidbody.position, Quaternion.identity);
+       
+        if (controller != null)
         {
             controller.ChangeHealth(1);
+            effect.GetComponent<ParticleSystem>().Play(); //play effect
             Destroy(gameObject);
         }
+
     }
 }

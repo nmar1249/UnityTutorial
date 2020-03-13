@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class RubyController : MonoBehaviour
 {
+    private Vector2 pos;
+
     public GameObject projectilePrefab;
     public float maxSpeed = 3.0f;
 
@@ -11,6 +13,7 @@ public class RubyController : MonoBehaviour
     int currentHealth;
 
    public int health {  get { return currentHealth; } }
+    public Vector2 curPos { get { return pos; } set { pos = value; } }
     public float timeInvincible = 2.0f;
     bool isInvincible;
     float invincibleTimer;
@@ -26,6 +29,7 @@ public class RubyController : MonoBehaviour
         rigidbody2d = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         currentHealth = maxHealth;
+        pos = rigidbody2d.position;
     }
 
     // Update is called once per frame
@@ -66,6 +70,9 @@ public class RubyController : MonoBehaviour
         {
             Launch();
         }
+
+        //update new position
+        curPos = rigidbody2d.position;
     }
 
     //used by other objects, triggered when collision occurs with object that damages or heals health
